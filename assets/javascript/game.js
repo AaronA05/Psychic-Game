@@ -29,6 +29,7 @@ document.getElementById("chances").textContent = chances;
 					chances--;
 					}
 		}
+
 	//Evaluate the guesses
 		if (cpuGuess === userKey){
 			wins++;
@@ -36,10 +37,8 @@ document.getElementById("chances").textContent = chances;
 			userPastGuesses = [];
 			cpuGuess = String.fromCharCode(Math.floor(Math.random() * (122- 97) + 97));
 			console.log(cpuGuess);
+			alert("Congrats you got it right!");
 		} 
-		if (cpuGuess != userKey){
-			chances--;
-		}
 		if (chances === 0){
 				losses++;
 				chances = 9;
@@ -52,6 +51,7 @@ document.getElementById("chances").textContent = chances;
 	
 
 		//Document the score for HTML
+		document.getElementById("userPastGuesses").textContent = userPastGuesses;
 		document.getElementById("wins").textContent = wins;
 		document.getElementById("losses").textContent = losses;
 		document.getElementById("chances").textContent = chances;
